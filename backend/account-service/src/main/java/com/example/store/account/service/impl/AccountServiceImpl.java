@@ -11,6 +11,7 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 import reactor.core.publisher.Mono;
 
+/** Implements account registration and login using MongoDB, BCrypt, and signed JWTs. */
 @Service
 public class AccountServiceImpl implements AccountService {
     private final UserRepository users;

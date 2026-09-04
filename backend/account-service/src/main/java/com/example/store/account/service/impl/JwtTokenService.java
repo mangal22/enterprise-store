@@ -8,6 +8,7 @@ import javax.crypto.spec.SecretKeySpec;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 
+/** Creates and signs the JWT access tokens returned by the account service. */
 @Service
 public class JwtTokenService {
     private final String secret;

@@ -10,6 +10,7 @@ import org.springframework.stereotype.Service;
 import reactor.core.publisher.Flux;
 import reactor.core.publisher.Mono;
 
+/** Implements reactive catalog CRUD operations and maps stored products to API responses. */
 @Service
 public class ProductServiceImpl implements ProductService {
     private final ProductRepository repository;
