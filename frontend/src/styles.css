@@ -1,0 +1,5 @@
+:root { font-family: Georgia, serif; color: #18251f; background: #f4f1e8; }
+* { box-sizing: border-box; }
+body { margin: 0; }
+app-page-shell app-site-nav { display: none; }
+button { cursor: pointer; }

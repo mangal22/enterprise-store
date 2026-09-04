@@ -1,0 +1,10 @@
+C:\Users\manga_jldb6eq\My Projects\Java\enterprise-store\backend\order-service\src\main\java\com\example\store\order\config\ObservabilityConfig.java
+C:\Users\manga_jldb6eq\My Projects\Java\enterprise-store\backend\order-service\src\main\java\com\example\store\order\controller\CheckoutController.java
+C:\Users\manga_jldb6eq\My Projects\Java\enterprise-store\backend\order-service\src\main\java\com\example\store\order\domain\Order.java
+C:\Users\manga_jldb6eq\My Projects\Java\enterprise-store\backend\order-service\src\main\java\com\example\store\order\dto\OrderDtos.java
+C:\Users\manga_jldb6eq\My Projects\Java\enterprise-store\backend\order-service\src\main\java\com\example\store\order\OrderServiceApplication.java
+C:\Users\manga_jldb6eq\My Projects\Java\enterprise-store\backend\order-service\src\main\java\com\example\store\order\repository\OrderRepository.java
+C:\Users\manga_jldb6eq\My Projects\Java\enterprise-store\backend\order-service\src\main\java\com\example\store\order\service\impl\LoggingMessageProducer.java
+C:\Users\manga_jldb6eq\My Projects\Java\enterprise-store\backend\order-service\src\main\java\com\example\store\order\service\impl\OrderServiceImpl.java
+C:\Users\manga_jldb6eq\My Projects\Java\enterprise-store\backend\order-service\src\main\java\com\example\store\order\service\MessageProducer.java
+C:\Users\manga_jldb6eq\My Projects\Java\enterprise-store\backend\order-service\src\main\java\com\example\store\order\service\OrderService.java

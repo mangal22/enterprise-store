@@ -1,0 +1,10 @@
+C:\Users\manga_jldb6eq\My Projects\Java\enterprise-store\backend\account-service\src\main\java\com\example\store\account\AccountServiceApplication.java
+C:\Users\manga_jldb6eq\My Projects\Java\enterprise-store\backend\account-service\src\main\java\com\example\store\account\config\ObservabilityConfig.java
+C:\Users\manga_jldb6eq\My Projects\Java\enterprise-store\backend\account-service\src\main\java\com\example\store\account\config\SecurityConfig.java
+C:\Users\manga_jldb6eq\My Projects\Java\enterprise-store\backend\account-service\src\main\java\com\example\store\account\controller\AccountController.java
+C:\Users\manga_jldb6eq\My Projects\Java\enterprise-store\backend\account-service\src\main\java\com\example\store\account\domain\User.java
+C:\Users\manga_jldb6eq\My Projects\Java\enterprise-store\backend\account-service\src\main\java\com\example\store\account\dto\AccountDtos.java
+C:\Users\manga_jldb6eq\My Projects\Java\enterprise-store\backend\account-service\src\main\java\com\example\store\account\repository\UserRepository.java
+C:\Users\manga_jldb6eq\My Projects\Java\enterprise-store\backend\account-service\src\main\java\com\example\store\account\service\AccountService.java
+C:\Users\manga_jldb6eq\My Projects\Java\enterprise-store\backend\account-service\src\main\java\com\example\store\account\service\impl\AccountServiceImpl.java
+C:\Users\manga_jldb6eq\My Projects\Java\enterprise-store\backend\account-service\src\main\java\com\example\store\account\service\impl\JwtTokenService.java
