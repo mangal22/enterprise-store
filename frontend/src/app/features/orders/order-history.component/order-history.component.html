@@ -1,0 +1,28 @@
+<app-page-shell
+  ><app-site-nav />
+  <main class="history">
+    <p class="kicker">YOUR ACCOUNT</p>
+    <h1>Order history</h1>
+    <p class="intro">A record of everything you have brought home.</p>
+    @if (loading()) {
+      <p>Loading orders...</p>
+    } @else if (!orders().length) {
+      <div class="empty">
+        No orders yet. <a routerLink="/products">Start shopping →</a>
+      </div>
+    } @else {
+      @for (order of orders(); track order.id) {
+        <article>
+          <div>
+            <strong>Order {{ order.id }}</strong
+            ><small
+              >{{ order.status }} ·
+              {{ order.createdAt | date: "medium" }}</small
+            >
+          </div>
+          <b>{{ order.total | currency }}</b>
+        </article>
+      }
+    }
+  </main></app-page-shell
+>

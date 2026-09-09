@@ -1,0 +1,84 @@
+.account {
+  max-width: 30rem;
+  margin: 0 auto;
+  padding: 5rem 0;
+}
+.kicker {
+  color: #c45d35;
+  font:
+    700 0.7rem ui-monospace,
+    monospace;
+  letter-spacing: 0.12em;
+}
+h1 {
+  color: #28483d;
+  font:
+    400 3.5rem/1 Georgia,
+    serif;
+}
+.intro,
+.switch,
+small {
+  color: #687269;
+  font:
+    0.9rem/1.5 ui-sans-serif,
+    system-ui,
+    sans-serif;
+}
+form {
+  margin-top: 2rem;
+}
+label {
+  display: block;
+  margin: 1.2rem 0;
+  color: #526159;
+  font:
+    700 0.7rem ui-monospace,
+    monospace;
+  text-transform: uppercase;
+}
+input {
+  display: block;
+  width: 100%;
+  margin-top: 0.4rem;
+  padding: 0.9rem;
+  border: 1px solid #b9c9b7;
+  background: #fffdf8;
+  font:
+    0.95rem ui-sans-serif,
+    system-ui,
+    sans-serif;
+}
+small {
+  display: block;
+  margin-top: 0.35rem;
+  text-transform: none;
+  font-weight: 400;
+}
+.submit {
+  width: 100%;
+  padding: 1rem;
+  color: #fff;
+  background: #28483d;
+  border: 0;
+  font-weight: 700;
+  cursor: pointer;
+}
+.submit:disabled {
+  opacity: 0.5;
+}
+.error {
+  padding: 0.8rem;
+  color: #8c3425;
+  background: #f5d8cf;
+  font:
+    0.8rem ui-sans-serif,
+    system-ui,
+    sans-serif;
+}
+.switch {
+  margin-top: 1.5rem;
+}
+a {
+  color: #c45d35;
+}

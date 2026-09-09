@@ -1,0 +1,12 @@
+.app-frame {
+  min-height: 100vh;
+}
+app-site-nav {
+  display: block;
+  max-width: 76rem;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+app-page-shell app-site-nav {
+  display: none;
+}
