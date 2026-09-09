@@ -14,4 +14,7 @@ export interface Product {
 /**
  * Represents one line item in the shopping cart.
  */
-export interface CartItem { product: Product; quantity: number; }
+export interface CartItem {
+  product: Product;
+  quantity: number;
+}
