@@ -1,0 +1,62 @@
+<app-page-shell
+  ><app-site-nav />
+  <main class="account">
+    <p class="kicker">NORTHSTAR ACCOUNT</p>
+    <h1>{{ isRegister ? "Join the collection." : "Welcome back." }}</h1>
+    <p class="intro">
+      {{
+        isRegister
+          ? "Create an account to keep your orders together."
+          : "Sign in to view your orders and check out faster."
+      }}
+    </p>
+    @if (error()) {
+      <div class="error">{{ error() }}</div>
+    }
+    <form (ngSubmit)="submit()">
+      @if (isRegister) {
+        <label
+          >Name<input name="name" [(ngModel)]="form.name" required
+        /></label>
+      }
+      <label
+        >Email<input
+          name="email"
+          type="email"
+          [(ngModel)]="form.email"
+          required /></label
+      ><label
+        >Password<input
+          name="password"
+          type="password"
+          [attr.type]="showPassword() ? 'text' : 'password'"
+          [(ngModel)]="form.password"
+          minlength="8"
+          required
+        /><small>Use at least 8 characters.</small
+        ><button
+          type="button"
+          (click)="showPassword.set(!showPassword())"
+          style="
+            margin-top: 0.35rem;
+            background: none;
+            border: none;
+            color: #28483d;
+            cursor: pointer;
+            font: 0.8rem ui-sans-serif;
+          "
+        >
+          {{ showPassword() ? "Hide" : "Show" }} password
+        </button></label
+      ><button class="submit" type="submit" [disabled]="busy()">
+        {{ busy() ? "Working..." : isRegister ? "Create account" : "Sign in" }}
+      </button>
+    </form>
+    <p class="switch">
+      {{ isRegister ? "Already have an account?" : "New here?" }}
+      <a [routerLink]="isRegister ? '/login' : '/register'">{{
+        isRegister ? "Sign in" : "Create an account"
+      }}</a>
+    </p>
+  </main></app-page-shell
+>

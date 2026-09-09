@@ -1,0 +1,57 @@
+.history {
+  padding: 4rem 0 8rem;
+  max-width: 48rem;
+  margin: 0 auto;
+}
+.kicker {
+  color: #c45d35;
+  font:
+    700 0.7rem ui-monospace,
+    monospace;
+  letter-spacing: 0.12em;
+}
+h1 {
+  color: #28483d;
+  font:
+    400 4rem/1 Georgia,
+    serif;
+}
+.intro,
+.empty,
+small {
+  color: #687269;
+  font:
+    0.9rem/1.5 ui-sans-serif,
+    system-ui,
+    sans-serif;
+}
+article {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 1.2rem 0;
+  border-top: 1px solid #c9c5b8;
+}
+strong,
+small {
+  display: block;
+}
+strong {
+  color: #28483d;
+  font:
+    700 0.85rem ui-sans-serif,
+    system-ui,
+    sans-serif;
+}
+small {
+  margin-top: 0.3rem;
+  font-size: 0.75rem;
+}
+b {
+  font:
+    1.2rem Georgia,
+    serif;
+}
+a {
+  color: #c45d35;
+}

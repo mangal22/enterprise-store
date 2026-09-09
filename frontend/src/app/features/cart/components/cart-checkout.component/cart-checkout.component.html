@@ -1,0 +1,58 @@
+<app-page-shell
+  ><main class="checkout">
+    <p class="kicker">YOUR BAG</p>
+    <h1>Cart and checkout</h1>
+    @if (cart.cartItems().length === 0) {
+      <section class="empty">
+        <p>Your cart is empty.</p>
+        <a routerLink="/products">Continue shopping →</a>
+      </section>
+    } @else {
+      <section class="items">
+        @for (item of cart.cartItems(); track item.product.id) {
+          <article>
+            <div>
+              <strong>{{ item.product.name }}</strong
+              ><small
+                >{{ item.quantity }} ×
+                {{ item.product.price | currency }}</small
+              >
+            </div>
+            <div class="quantity">
+              <button
+                type="button"
+                (click)="cart.changeQuantity(item.product.id, -1)"
+              >
+                −</button
+              ><span>{{ item.quantity }}</span
+              ><button
+                type="button"
+                (click)="cart.changeQuantity(item.product.id, 1)"
+              >
+                +
+              </button>
+            </div>
+          </article>
+        }
+      </section>
+      <div class="summary">
+        <span>Subtotal</span><strong>{{ cart.subtotal() | currency }}</strong>
+      </div>
+      @if (message()) {
+        <div class="notice">{{ message() }}</div>
+      }
+      @if (error()) {
+        <div class="error">{{ error() }}</div>
+      }
+      <button
+        class="place-order"
+        type="button"
+        (click)="placeOrder()"
+        [disabled]="busy()"
+      >
+        {{ busy() ? "Processing..." : "Place order" }} <span>→</span>
+      </button>
+    }
+    <a class="back" routerLink="/products">← Back to products</a>
+  </main></app-page-shell
+>

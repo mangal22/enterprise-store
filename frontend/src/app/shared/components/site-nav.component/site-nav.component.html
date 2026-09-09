@@ -1,0 +1,17 @@
+<nav>
+  <a class="brand" routerLink="/">NORTHSTAR</a>
+  <div class="links">
+    <a routerLink="/">Home</a><a routerLink="/products">Products</a
+    ><a routerLink="/orders">Order history</a
+    ><a class="cart-link" routerLink="/cart" aria-label="Open cart"
+      >Cart <span>{{ cart.itemCount() }}</span></a
+    >
+    @if (auth.isLoggedIn()) {
+      <span class="welcome">Hi, {{ auth.user()?.name }}</span
+      ><button type="button" (click)="auth.logout()">Sign out</button>
+    } @else {
+      <a routerLink="/login">Login</a
+      ><a class="join" routerLink="/register">Register</a>
+    }
+  </div>
+</nav>

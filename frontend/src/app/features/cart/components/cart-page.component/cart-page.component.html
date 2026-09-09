@@ -1,0 +1,179 @@
+<app-page-shell>
+  <header class="topbar">
+    <div>
+      <p class="kicker">NORTHSTAR / COMMERCE CONSOLE</p>
+      <h1>Everything useful, beautifully chosen.</h1>
+      <p class="lede">
+        Browse the catalog, curate a cart, and manage the inventory that powers
+        it.
+      </p>
+    </div>
+    <div class="cart-badge">
+      <span>{{ cart.itemCount() }}</span
+      ><small>items in cart</small>
+    </div>
+  </header>
+  @if (message()) {
+    <div class="notice">{{ message() }}</div>
+  }
+  @if (error()) {
+    <div class="error">{{ error() }}</div>
+  }
+  <div class="workspace">
+    <section class="catalog">
+      <div class="section-heading">
+        <div>
+          <p class="kicker">LIVE CATALOG</p>
+          <h2>Products</h2>
+        </div>
+        <button class="accent-button" type="button" (click)="startCreate()">
+          + Add product
+        </button>
+      </div>
+      @if (loading()) {
+        <div class="empty-state">Loading the catalog...</div>
+      } @else if (products().length === 0) {
+        <div class="empty-state">No products yet. Add the first one.</div>
+      } @else {
+        <div class="product-grid">
+          @for (product of products(); track product.id) {
+            <article class="product-card">
+              <div class="product-art">
+                <span>{{ initials(product.name) }}</span>
+              </div>
+              <div class="product-copy">
+                <p class="stock">{{ product.stock }} available</p>
+                <h3>{{ product.name }}</h3>
+                <p>{{ product.description }}</p>
+              </div>
+              <div class="product-footer">
+                <strong>{{ product.price | currency }}</strong>
+                <div class="card-actions">
+                  <button
+                    class="text-button"
+                    type="button"
+                    (click)="startEdit(product)"
+                  >
+                    Edit</button
+                  ><button
+                    class="text-button danger"
+                    type="button"
+                    (click)="removeProduct(product)"
+                  >
+                    Delete</button
+                  ><button
+                    class="buy-button"
+                    type="button"
+                    (click)="addToCart(product)"
+                    [disabled]="product.stock === 0"
+                  >
+                    Add to cart
+                  </button>
+                </div>
+              </div>
+            </article>
+          }
+        </div>
+      }
+    </section>
+    <aside class="side-panel">
+      @if (editing()) {
+        <form class="editor" (ngSubmit)="saveProduct()">
+          <div class="section-heading compact">
+            <div>
+              <p class="kicker">INVENTORY</p>
+              <h2>{{ editingId() ? "Edit product" : "New product" }}</h2>
+            </div>
+            <button class="close-button" type="button" (click)="cancelEdit()">
+              ×
+            </button>
+          </div>
+          <label
+            >Name<input name="name" [(ngModel)]="draft.name" required /></label
+          ><label
+            >Description<textarea
+              name="description"
+              [(ngModel)]="draft.description"
+              rows="3"
+              required
+            ></textarea>
+          </label>
+          <div class="form-row">
+            <label
+              >Price<input
+                name="price"
+                type="number"
+                min="0"
+                step="0.01"
+                [(ngModel)]="draft.price"
+                required /></label
+            ><label
+              >Stock<input
+                name="stock"
+                type="number"
+                min="0"
+                step="1"
+                [(ngModel)]="draft.stock"
+                required
+            /></label>
+          </div>
+          <button
+            class="accent-button full"
+            type="submit"
+            [disabled]="saving()"
+          >
+            {{ saving() ? "Saving..." : "Save product" }}
+          </button>
+        </form>
+      } @else {
+        <div class="side-intro">
+          <p class="kicker">YOUR BAG</p>
+          <h2>Cart summary</h2>
+          <p>Ready when you are.</p>
+        </div>
+        @if (cart.cartItems().length === 0) {
+          <div class="cart-empty">Your cart is waiting for its first pick.</div>
+        } @else {
+          @for (item of cart.cartItems(); track item.product.id) {
+            <div class="cart-line">
+              <div>
+                <strong>{{ item.product.name }}</strong
+                ><small
+                  >{{ item.quantity }} ×
+                  {{ item.product.price | currency }}</small
+                >
+                <div class="quantity">
+                  <button
+                    type="button"
+                    (click)="changeQuantity(item.product.id, -1)"
+                  >
+                    −</button
+                  ><span>{{ item.quantity }}</span
+                  ><button
+                    type="button"
+                    (click)="changeQuantity(item.product.id, 1)"
+                  >
+                    +
+                  </button>
+                </div>
+              </div>
+              <button
+                class="close-button"
+                type="button"
+                (click)="removeFromCart(item.product.id)"
+              >
+                ×
+              </button>
+            </div>
+          }
+        }
+        <div class="total">
+          <span>Subtotal</span><strong>{{ cart.subtotal() | currency }}</strong>
+        </div>
+        <a class="checkout-button" routerLink="/cart"
+          >Open cart to checkout <span>→</span></a
+        >
+      }
+    </aside>
+  </div>
+</app-page-shell>
