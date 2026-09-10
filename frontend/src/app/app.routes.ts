@@ -1,4 +1,5 @@
 import { Routes } from "@angular/router";
+import { authGuard } from "./core/guards/auth.guard";
 
 /**
  * Defines the app-level route map for the storefront.
@@ -33,6 +34,7 @@ export const appRoutes: Routes = [
         (m) => m.AccountPageComponent,
       ),
     data: { mode: "login" },
+    canActivate: [authGuard],
   },
   {
     path: "register",
@@ -41,6 +43,7 @@ export const appRoutes: Routes = [
         (m) => m.AccountPageComponent,
       ),
     data: { mode: "register" },
+    canActivate: [authGuard],
   },
   {
     path: "orders",
